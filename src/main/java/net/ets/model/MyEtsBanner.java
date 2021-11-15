@@ -10,7 +10,7 @@ import javax.persistence.Lob;
 public class MyEtsBanner {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int bannerId;
 	private String imgLink;
 	private String segment;

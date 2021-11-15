@@ -1,6 +1,7 @@
 package net.ets.service;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -17,6 +18,9 @@ public class MyEtsBannerService {
 		this.bannerRepo = bannerRepository;
 	}
 	
+	public List<MyEtsBanner> getBannerData() {
+		return bannerRepo.findAll();
+	}
 	
 	public void saveMyEtsBanner(MyEtsBannerViewModel banner) {
 		

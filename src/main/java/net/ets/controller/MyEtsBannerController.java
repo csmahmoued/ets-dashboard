@@ -1,5 +1,7 @@
 package net.ets.controller;
 
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,6 +28,10 @@ public class MyEtsBannerController {
 	public ResponseEntity<Void> saveBanner(@ModelAttribute MyEtsBannerViewModel bannerViewModel ){
 		bannerService.saveMyEtsBanner(bannerViewModel);
 		return new ResponseEntity<>(HttpStatus.ACCEPTED);
+	}
+	@RequestMapping(value = "/banners" , method = RequestMethod.GET)
+	public ResponseEntity<List<MyEtsBanner>> getAllBannerData(){
+		return new ResponseEntity<>(bannerService.getBannerData(),HttpStatus.OK);
 	}
 	
 	
